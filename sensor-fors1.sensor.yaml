@@ -21,6 +21,12 @@ spec:
             value:
               - heads
             type: string
+          - path: body.ref
+            comparator: '='
+            template: '{{ trimPrefix "refs/heads/" .Input }}'
+            type: string
+            value:
+              - main
   triggers:
     - template:
         name: hello1
